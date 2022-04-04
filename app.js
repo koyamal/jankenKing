@@ -20,4 +20,8 @@ app.get('/play', (req, res) =>{
   res.render('janken.ejs');
 });
 
+app.get('/result', (req, res) =>{
+  res.render('result.ejs');
+});
+
 app.listen(3000);

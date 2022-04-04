@@ -24,4 +24,8 @@ app.get('/result', (req, res) =>{
   res.render('result.ejs');
 });
 
+app.get('/ranking', (req, res) =>{
+  res.render('ranking.ejs');
+});
+
 app.listen(3000);

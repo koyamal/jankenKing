@@ -16,4 +16,8 @@ app.get('/login', (req, res) =>{
   res.render('login.ejs');
 });
 
+app.get('/play', (req, res) =>{
+  res.render('janken.ejs');
+});
+
 app.listen(3000);

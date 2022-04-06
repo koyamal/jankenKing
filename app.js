@@ -88,6 +88,12 @@ app.post('/login', (req, res) =>{
   }
 });
 
+app.get('/logout', (req, res) =>{
+  req.session.destroy((error) =>{
+    res.redirect('/');
+  });
+});
+
 app.get('/play', (req, res) =>{
   res.render('janken.ejs');
 });

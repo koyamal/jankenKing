@@ -70,7 +70,7 @@ app.post('/login', (req, res) =>{
             req.session.userName = results[0].name;
             req.session.userInfo = results[0];
             console.log("Login: " + results[0].name);
-            res.redirect('/');
+            res.redirect('/play');
           } else {
             console.log("Login failed password error");
             console.log("  - Inputed email: " + email);

@@ -1,1 +1,18 @@
-<h1>じゃんけん Play page</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JankenKing</title>
+  </head>
+  <h1>じゃんけん Play page</h1>
+  <% if(locals.userName !== "Guest"){ %>
+    <div>
+        <p><%= locals.userName %></p>
+    </div>
+  <% }else{ %>
+    <div>
+        <p><%= locals.userName %></p>
+    </div>
+  <% } %>
+
+</html>

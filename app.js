@@ -4,11 +4,20 @@ const res = require('express/lib/response');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const { NULL } = require('mysql/lib/protocol/constants/types');
+const session = require('express-session');
 
 const app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(
+  session({
+    secret: 'my_secret_key',
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -23,6 +32,18 @@ connection.connect((err) => {
     return;
   }
   console.log('Connection Successfully!');
+});
+
+app.use((req, res, next) =>{
+  if (req.session.userName === undefined){
+    res.locals.userName = "Guest";
+    res.locals.isLogin = false;
+  }else{
+    res.locals.userName = req.session.userName;
+    res.locals.userInfo = req.session.userInfo;
+    res.locals.isLogin = true;
+  }
+  next();
 });
 
 app.get('/', (req, res) => {
@@ -46,6 +67,8 @@ app.post('/login', (req, res) =>{
       (error, results) =>{
         if (results.length > 0){
           if (results[0].password === password){
+            req.session.userName = results[0].name;
+            req.session.userInfo = results[0];
             console.log("Login: " + results[0].name);
             res.redirect('/');
           } else {

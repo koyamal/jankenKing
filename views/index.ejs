@@ -1,8 +1,28 @@
-<h1>じゃんけんキング</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pra_Node.js(View Fruits page)</title>
+    <script src="/send_url.js"></script>
+  </head>
+  <h1>じゃんけんキング</h1>
 
-<div>
+  <div>
     <a href="/login">ログイン</a>
-</div>
-<div>
+  </div>
+  <div>
     <a href="/play">ログインせずに遊ぶ</a>
-</div>
+  </div>
+
+
+  <% if(locals.userName !== "Guest"){ %>
+    <div>
+        <p><%= locals.userName %></p>
+    </div>
+  <% }else{ %>
+    <div>
+        <p><%= locals.userName %></p>
+    </div>
+  <% } %>
+
+</html>

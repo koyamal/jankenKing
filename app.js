@@ -100,7 +100,19 @@ app.get('/play', (req, res) =>{
 
 app.get('/hand/:hand', (req, res) =>{
   console.log(req.params.hand);
-  res.redirect('/result');
+  var min = 0 ;
+  var max = 2 ;
+  var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  console.log(a);
+  switch(a){
+    case 0:
+      console.log('ぐー');
+    case 1:
+      console.log('ちょき');
+    case 2:
+      console.log('ぱー');
+  }
+  res.redirect('/play');
 });
 
 app.get('/result', (req, res) =>{

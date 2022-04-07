@@ -98,6 +98,11 @@ app.get('/play', (req, res) =>{
   res.render('janken.ejs');
 });
 
+app.get('/hand/:hand', (req, res) =>{
+  console.log(req.params.hand);
+  res.redirect('/result');
+});
+
 app.get('/result', (req, res) =>{
   res.render('result.ejs');
 });

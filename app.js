@@ -98,7 +98,7 @@ app.get('/play', (req, res) =>{
   res.render('janken.ejs');
 });
 
-app.get('/hand/:hand', (req, res) =>{
+app.get('/result/:hand', (req, res) =>{
   console.log(req.params.hand);
   var userHand = req.params.hand;
   var min = 0 ;
@@ -138,7 +138,7 @@ app.get('/hand/:hand', (req, res) =>{
       console.log('ぱー');
       break;
   }
-  res.render('result.ejs', {judgeJanken: judgeJanken});
+  res.render('result.ejs', {judgeJanken: judgeJanken, userHand: userHand, cpuHand: cpuHand});
 });
 
 app.get('/result', (req, res) =>{

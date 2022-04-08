@@ -6,6 +6,25 @@
   </head>
   
   <h1>Result page</h1>
+  <h1>ぽん！</h1>
+  <div>
+    <% if(cpuHand === 0){ %>
+      <p>ぐー</p>
+    <% } else if (cpuHand === 1){ %>
+      <p>ちょき</p>
+    <% } else { %>
+      <p>ぱー</p>
+    <% } %>
+  </div>
+  <div>
+    <% if(userHand === 'gu'){ %>
+      <p>ぐー</p>
+    <% } else if (userHand === 'choki'){ %>
+      <p>ちょき</p>
+    <% } else { %>
+      <p>ぱー</p>
+    <% } %>
+  </div>
   <div>
     <p><%= judgeJanken %></p>
   </div>

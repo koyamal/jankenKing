@@ -11,7 +11,7 @@ const app = express();
 var userHand = undefined;
 var cpuHand = undefined;
 var judgeJanken = undefined;
-var points = undefined;
+var point = undefined;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,8 +47,8 @@ app.use((req, res, next) =>{
     res.locals.userName = req.session.userName;
     res.locals.userInfo = req.session.userInfo;
     res.locals.isLogin = true;
-    if(points !== undefined){
-      req.session.point = points;
+    if(point !== undefined){
+      req.session.point = point;
     }
     res.locals.point = req.session.point;
   }
@@ -57,16 +57,11 @@ app.use((req, res, next) =>{
 
 app.use((req, res, next) =>{
   if (req.session.userName !== undefined){
-    var point = 0;
     connection.query(
       'SELECT point FROM users WHERE email = ?',
       [req.session.userInfo.email],
       (error, results) =>{
         point = results[0].point;
-        console.log("inside: " + point);
-        points = point;
-        req.session.point = points;
-        console.log("inside-: " + req.session.point);
       }
     );
   }

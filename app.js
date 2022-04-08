@@ -100,23 +100,48 @@ app.get('/play', (req, res) =>{
 
 app.get('/hand/:hand', (req, res) =>{
   console.log(req.params.hand);
+  var userHand = req.params.hand;
   var min = 0 ;
   var max = 2 ;
-  var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-  console.log(a);
-  switch(a){
+  var cpuHand = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+  var judgeJanken = undefined;
+  console.log(cpuHand);
+  switch(cpuHand){
     case 0:
+      if(userHand === 'gu'){
+        judgeJanken = 'Draw';
+      }else if (userHand === 'choki'){
+        judgeJanken = 'Lose';
+      }else{
+        judgeJanken = 'Win';
+      }
       console.log('ぐー');
+      break;
     case 1:
+      if(userHand === 'gu'){
+        judgeJanken = 'Win';
+      }else if (userHand === 'choki'){
+        judgeJanken = 'Draw';
+      }else{
+        judgeJanken = 'Lose';
+      }
       console.log('ちょき');
+      break;
     case 2:
+      if(userHand === 'gu'){
+        judgeJanken = 'Lose';
+      }else if (userHand === 'choki'){
+        judgeJanken = 'Win';
+      }else{
+        judgeJanken = 'Draw';
+      }
       console.log('ぱー');
+      break;
   }
-  res.redirect('/play');
+  res.render('result.ejs', {judgeJanken: judgeJanken});
 });
 
 app.get('/result', (req, res) =>{
-  res.render('result.ejs');
 });
 
 app.get('/ranking', (req, res) =>{

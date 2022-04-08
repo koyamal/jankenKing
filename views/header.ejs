@@ -1,4 +1,12 @@
 <header>
     <a href="/play">遊ぶ</a>
     <a href="/logout">ログアウト</a>
+
+    <div>
+        <% if(locals.userName === "Guest"){ %>
+            <p><%= locals.userName %></p>
+        <% } else { %>
+            <p><%= locals.userName %></p>            
+        <% } %>         
+    </div>
 </header>

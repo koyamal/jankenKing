@@ -5,13 +5,10 @@
     <div>
         <% if(locals.userName === "Guest"){ %>
             <p><%= locals.userName %></p>
-            <p>0pt</p>
-            <% var point = 0; %>
-            <p><%= point %></p>
+            <p>0 pt</p>
         <% } else { %>
             <p><%= locals.userName %></p>  
-            <p><%= locals.point %></p>
-            <% console.log("point:" + locals.point); %>          
+            <p><%= locals.point %> pt</p>         
         <% } %>         
     </div>
 </header>

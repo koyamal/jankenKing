@@ -46,6 +46,28 @@ app.use((req, res, next) =>{
     res.locals.userName = req.session.userName;
     res.locals.userInfo = req.session.userInfo;
     res.locals.isLogin = true;
+    res.locals.point = 100;
+  }
+  next();
+});
+
+app.use((req, res, next) =>{
+  console.log("this is head app.use");
+  if (req.session.userName !== undefined){
+    console.log("this is before query");
+    var point = 0;
+    connection.query(
+      'SELECT point FROM users WHERE email = ?',
+      [req.session.userInfo.email],
+      (error, results) =>{
+        console.log("this is after query");
+        console.log(results[0]);
+        res.locals.point = 99;
+        point = results[0].point;
+        console.log(res.locals.point);
+      }
+    );
+    res.locals.point = point;
   }
   next();
 });

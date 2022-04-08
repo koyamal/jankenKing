@@ -11,6 +11,7 @@ const app = express();
 var userHand = undefined;
 var cpuHand = undefined;
 var judgeJanken = undefined;
+var points = undefined;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +47,10 @@ app.use((req, res, next) =>{
     res.locals.userName = req.session.userName;
     res.locals.userInfo = req.session.userInfo;
     res.locals.isLogin = true;
+    if(points !== undefined){
+      req.session.point = points;
+    }
+    res.locals.point = req.session.point;
   }
   next();
 });
@@ -58,9 +63,12 @@ app.use((req, res, next) =>{
       [req.session.userInfo.email],
       (error, results) =>{
         point = results[0].point;
+        console.log("inside: " + point);
+        points = point;
+        req.session.point = points;
+        console.log("inside-: " + req.session.point);
       }
     );
-    res.locals.point = point;
   }
   next();
 });
@@ -88,6 +96,7 @@ app.post('/login', (req, res) =>{
           if (results[0].password === password){
             req.session.userName = results[0].name;
             req.session.userInfo = results[0];
+            req.session.point = results[0].point;
             console.log("Login: " + results[0].name);
             res.redirect('/play');
           } else {
@@ -155,6 +164,25 @@ app.get('/hand/:hand', (req, res) =>{
       }
       console.log('ぱー');
       break;
+  }
+  if (req.session.userName !== undefined){
+    if (judgeJanken === 'Win'){
+      connection.query(
+        'UPDATE users SET point = point + 3 WHERE email = ?',
+        [req.session.userInfo.email],
+        (error, results) =>{
+
+        }
+      );
+    }else if (judgeJanken === 'Draw'){
+      connection.query(
+        'UPDATE users SET point = point + 1 WHERE email = ?',
+        [req.session.userInfo.email],
+        (error, results) =>{
+          
+        }
+      );
+    }
   }
   res.redirect('/result');
 });

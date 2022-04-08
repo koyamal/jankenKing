@@ -8,6 +8,10 @@ const session = require('express-session');
 
 const app = express();
 
+var userHand = undefined;
+var cpuHand = undefined;
+var judgeJanken = undefined;
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -98,13 +102,12 @@ app.get('/play', (req, res) =>{
   res.render('janken.ejs');
 });
 
-app.get('/result/:hand', (req, res) =>{
+app.get('/hand/:hand', (req, res) =>{
   console.log(req.params.hand);
-  var userHand = req.params.hand;
+  userHand = req.params.hand;
   var min = 0 ;
   var max = 2 ;
-  var cpuHand = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-  var judgeJanken = undefined;
+  cpuHand = Math.floor( Math.random() * (max + 1 - min) ) + min ;
   console.log(cpuHand);
   switch(cpuHand){
     case 0:
@@ -138,10 +141,11 @@ app.get('/result/:hand', (req, res) =>{
       console.log('ぱー');
       break;
   }
-  res.render('result.ejs', {judgeJanken: judgeJanken, userHand: userHand, cpuHand: cpuHand});
+  res.redirect('/result');
 });
 
 app.get('/result', (req, res) =>{
+  res.render('result.ejs', {judgeJanken: judgeJanken, userHand: userHand, cpuHand: cpuHand});
 });
 
 app.get('/ranking', (req, res) =>{

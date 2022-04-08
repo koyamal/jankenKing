@@ -6,8 +6,9 @@
   </head>
   
   <h1>Result page</h1>
-  <h1>ぽん！</h1>
+  <h1>ぽん！！</h1>
   <div>
+    CPU: 
     <% if(cpuHand === 0){ %>
       <p>ぐー</p>
     <% } else if (cpuHand === 1){ %>
@@ -17,6 +18,7 @@
     <% } %>
   </div>
   <div>
+    <%= locals.userName %>: 
     <% if(userHand === 'gu'){ %>
       <p>ぐー</p>
     <% } else if (userHand === 'choki'){ %>

@@ -121,8 +121,8 @@ header{
     width: 300px;
     font-size: 50px;
     margin: 0 auto 0 auto;
-    color: #ffff00;
-    background-color: black;
+    color: #FFA781;
+    background-color: #5B0E2D;
 }
 
 .link-action-select a{
@@ -131,6 +131,6 @@ header{
     width: 300px;
     height: 30px;
     margin: 10px 10px;
-    color: #ffff00;
-    background-color: black;
+    color: #5B0E2D;
+    background-color: #FFA781;
 }

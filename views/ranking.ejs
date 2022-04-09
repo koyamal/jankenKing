@@ -6,4 +6,15 @@
   </head>
   <%- include('header.ejs'); %>
   <h1>Ranking page</h1>
+  <table border="1">
+    <% var ranking = 1; %>
+    <% results.forEach(result =>{ %> 
+      <tr>
+        <td><%= ranking %></td>
+        <td><%= result.name %></td>
+        <td><%= result.point %>  pt</td>
+      </tr>
+      <% ranking += 1; %>  
+    <% }); %>
+  </table>
 </html>

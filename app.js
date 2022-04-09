@@ -187,7 +187,13 @@ app.get('/result', (req, res) =>{
 });
 
 app.get('/ranking', (req, res) =>{
-  res.render('ranking.ejs');
+  connection.query(
+    'SELECT name, point from users ORDER BY point DESC limit 5',
+    (error, results)=>{
+      console.log(results);
+      res.render('ranking.ejs', {results: results});
+    }
+  );
 });
 
 app.listen(3000);

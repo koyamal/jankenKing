@@ -6,29 +6,44 @@
     <title>JankenKing</title>
   </head>
   <%- include('header.ejs'); %>
-  <h1>Result page</h1>
-  <h1>ぽん！！</h1>
-  <div>
-    CPU: 
-    <% if(cpuHand === 0){ %>
-      <p>ぐー</p>
-    <% } else if (cpuHand === 1){ %>
-      <p>ちょき</p>
-    <% } else { %>
-      <p>ぱー</p>
-    <% } %>
-  </div>
-  <div>
-    <%= locals.userName %>: 
-    <% if(userHand === 'gu'){ %>
-      <p>ぐー</p>
-    <% } else if (userHand === 'choki'){ %>
-      <p>ちょき</p>
-    <% } else { %>
-      <p>ぱー</p>
-    <% } %>
-  </div>
-  <div>
-    <p><%= judgeJanken %></p>
+  <div class="center">
+    <h1 class="jankeen-msg">ぽん！！</h1>
+    <div>
+      <p class="who-label">
+        CPU:
+      </p> 
+      <% if(cpuHand === 0){ %>
+        <p class="selected-hand link-gu">ぐー</p>
+      <% } else if (cpuHand === 1){ %>
+        <p class="selected-hand link-choki">ちょき</p>
+      <% } else { %>
+        <p class="selected-hand link-pa">ぱー</p>
+      <% } %>
+    </div>
+    <div>
+      <p class="who-label">
+        YOU: 
+      </p>
+      <% if(userHand === 'gu'){ %>
+        <p class="selected-hand link-gu">ぐー</p>
+      <% } else if (userHand === 'choki'){ %>
+        <p class="selected-hand link-choki">ちょき</p>
+      <% } else { %>
+        <p class="selected-hand link-pa">ぱー</p>
+      <% } %>
+    </div>
+    <div class="judgement">
+      <% if(judgeJanken === 'Win'){ %>
+        <p>YOU WIN</p>
+      <% }else if(judgeJanken === 'Lose'){ %>
+        <p>YOU LOSE</p>       
+      <% }else{ %>
+        <p>DRAW</p>
+      <% } %>
+    </div>
+    <div class="link-action-select">
+      <a href="/play">もう一度 遊ぶ</a>
+      <a href="/ranking">ランキングを見る</a>
+    </div>
   </div>
 </html>

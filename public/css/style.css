@@ -78,7 +78,6 @@ header{
     display: inline-block;
     width: 300px;
     height: 100px;
-    background-color: red;
     margin: 0 10px;
 }
 
@@ -87,12 +86,12 @@ header{
     color: #FFB500;
 }
 
-.link-pa{
+.link-choki{
     background-color: #F93800;
     color: #283350;
 }
 
-.link-choki{
+.link-pa{
     background-color: #FFB500;
     color: #F93800;
 }
@@ -101,4 +100,37 @@ header{
     font-size: 45px;
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+.selected-hand{
+    font-size: 50px;
+    display: block;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto 40px auto;
+}
+
+.who-label{
+    width: 300px;
+    font-size: 25px;
+    text-align: left;
+    margin: 0 auto 0 auto;
+}
+
+.judgement{
+    width: 300px;
+    font-size: 50px;
+    margin: 0 auto 0 auto;
+    color: #ffff00;
+    background-color: black;
+}
+
+.link-action-select a{
+    font-size: 20px;
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+    margin: 10px 10px;
+    color: #ffff00;
+    background-color: black;
 }

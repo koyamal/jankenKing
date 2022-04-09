@@ -72,3 +72,33 @@ header{
     padding: 10px;
     border: none;
 }
+
+.link-select-hand{
+    font-size: 50px;
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    margin: 0 10px;
+}
+
+.link-gu{
+    background-color: #283350;
+    color: #FFB500;
+}
+
+.link-pa{
+    background-color: #F93800;
+    color: #283350;
+}
+
+.link-choki{
+    background-color: #FFB500;
+    color: #F93800;
+}
+
+.jankeen-msg{
+    font-size: 45px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

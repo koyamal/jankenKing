@@ -6,21 +6,12 @@
     <title>JankenKing</title>
   </head>
   <%- include('header.ejs'); %>
-  <h1>じゃんけん Play page</h1>
-  <h1>じゃんけーん</h1>
-  <div>
-    <a href="/hand/<%= 'gu' %>">ぐー</a>
-    <a href="/hand/<%= 'choki' %>">ちょき</a>
-    <a href="/hand/<%= 'pa' %>">ぱー</a>
+  <div class="center">
+    <h1 class="jankeen-msg">じゃんけーん</h1>
+    <div>
+      <a href="/hand/<%= 'gu' %>" class="link-select-hand link-gu">ぐー</a>
+      <a href="/hand/<%= 'choki' %>" class="link-select-hand link-pa">ちょき</a>
+      <a href="/hand/<%= 'pa' %>" class="link-select-hand link-choki">ぱー</a>
+    </div>
   </div>
-  <% if(locals.userName !== "Guest"){ %>
-    <div>
-        <p><%= locals.userName %></p>
-    </div>
-  <% }else{ %>
-    <div>
-        <p><%= locals.userName %></p>
-    </div>
-  <% } %>
-
 </html>

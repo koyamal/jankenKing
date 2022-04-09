@@ -6,19 +6,18 @@
     <title>JankenKing</title>
   </head>
   <%- include('header.ejs'); %>
-  <h1>Login page</h1>
-  <div>
+  <div class="center">
     <form action="/login" method="post">
         <div>
-            <p>ログインID</p>
-            <input type="text" name="email">
+            <p class="form-title">ログインID</p>
+            <input type="text" name="email" class="form-input">
         </div>
         <div>
-            <p>パスワード</p>
-            <input type="password" name="password">
+            <p class="form-title">パスワード</p>
+            <input type="password" name="password" class="form-input">
         </div>
         <div>
-            <input type="submit" value="ログイン">
+            <input type="submit" value="ログイン" class="link-bg-color link-text-color form-submit">
         </div>
     </form>
   </div>

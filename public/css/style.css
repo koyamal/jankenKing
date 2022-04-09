@@ -1,0 +1,37 @@
+html{
+    background-color: #eeeeeeff;
+}
+
+.center{
+    text-align: center;
+}
+
+.top-page-title{
+    font-size: 100px;
+}
+
+.link-bg-color{
+    background-color: #ffc400ff;
+}
+
+.link-text-color{
+    color: #0000ff;
+}
+
+.top-page-link{
+    display: block;
+    margin: 40px auto 40px auto;
+    padding: 20px;
+}
+
+.top-page-link-l{
+    width: 200px;
+    height: auto;
+    font-size: 40px;
+}
+
+.top-page-link-s{
+    width: 200px;
+    height: auto;
+    font-size: 20px;
+}

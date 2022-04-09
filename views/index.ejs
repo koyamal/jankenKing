@@ -5,28 +5,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>JankenKing</title>
   </head>
-  <h1>じゃんけんキング</h1>
-
-  <div>
-    <a href="/login">ログイン</a>
-  </div>
-  <div>
-    <a href="/play">ログインせずに遊ぶ</a>
-  </div>
-
-
-  <% if(locals.userName !== "Guest"){ %>
+  <div class="center">
+    <h1 class="top-page-title">じゃんけん<br>キング</h1>
     <div>
-        <p><%= locals.userName %></p>
+      <a href="/login" class="link-bg-color link-text-color top-page-link top-page-link-l">ログイン</a>
     </div>
-  <% }else{ %>
     <div>
-        <p><%= locals.userName %></p>
+      <a href="/play" class="link-bg-color link-text-color top-page-link top-page-link-s">ログインせずに遊ぶ</a>
     </div>
-  <% } %>
-
-  <div>
-    <a href="/logout">ログアウト</a>
   </div>
-
 </html>

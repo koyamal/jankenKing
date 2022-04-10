@@ -134,3 +134,28 @@ header{
     color: #5B0E2D;
     background-color: #FFA781;
 }
+
+.ranking-table{
+    margin:auto;
+    border-collapse: collapse; 
+}
+
+.ranking-table td {
+    border: solid 1px;
+    height: 80px;
+    text-align: left;
+    font-size: 40px;
+    padding-left: 10px;
+    border-color: black;
+}
+
+.table-width-small{
+    width: 100px;
+    background-color: #ff9e00ff;
+    color:white;
+}
+
+.table-width-large{
+    width: 200px;
+    background-color: #fce5cdff;
+}

@@ -171,3 +171,7 @@ header{
 .header-uname{
     clear: both;
 }
+
+.header-uname p{
+    display: inline-block;
+}

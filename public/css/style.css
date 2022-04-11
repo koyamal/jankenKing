@@ -164,8 +164,20 @@ header{
     float: left;
 }
 
+.header-title a{
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+}
+
 .header-link{
     float: right;
+}
+
+.header-link a{
+    font-size: 30px;
+    display: inline-block;
+    margin-left:10px;
 }
 
 .header-uname{

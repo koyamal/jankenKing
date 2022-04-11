@@ -159,3 +159,15 @@ header{
     width: 200px;
     background-color: #fce5cdff;
 }
+
+.header-title{
+    float: left;
+}
+
+.header-link{
+    float: right;
+}
+
+.header-uname{
+    clear: both;
+}

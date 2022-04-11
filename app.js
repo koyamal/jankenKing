@@ -92,6 +92,7 @@ app.post('/login', (req, res) =>{
             req.session.userName = results[0].name;
             req.session.userInfo = results[0];
             req.session.point = results[0].point;
+            point = req.session.point;
             console.log("Login: " + results[0].name);
             res.redirect('/play');
           } else {
@@ -113,6 +114,7 @@ app.post('/login', (req, res) =>{
 
 app.get('/logout', (req, res) =>{
   req.session.destroy((error) =>{
+    point = undefined;
     res.redirect('/');
   });
 });

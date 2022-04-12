@@ -9,6 +9,7 @@ html{
 
 header{
     background-color: #9e9e9eff;
+    height: 70px;
 }
 
 .center{
@@ -178,12 +179,15 @@ header{
     font-size: 30px;
     display: inline-block;
     margin-left:10px;
+    height: 70px;
+    line-height: 70px;
 }
 
 .header-uname{
-    clear: both;
+    clear: left;
 }
 
 .header-uname p{
+    font-size: 20px;
     display: inline-block;
 }

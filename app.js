@@ -124,12 +124,10 @@ app.get('/play', (req, res) =>{
 });
 
 app.get('/hand/:hand', (req, res) =>{
-  console.log(req.params.hand);
   userHand = req.params.hand;
   var min = 0 ;
   var max = 2 ;
   cpuHand = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-  console.log(cpuHand);
   switch(cpuHand){
     case 0:
       if(userHand === 'gu'){
@@ -139,7 +137,6 @@ app.get('/hand/:hand', (req, res) =>{
       }else{
         judgeJanken = 'Win';
       }
-      console.log('ぐー');
       break;
     case 1:
       if(userHand === 'gu'){
@@ -149,7 +146,6 @@ app.get('/hand/:hand', (req, res) =>{
       }else{
         judgeJanken = 'Lose';
       }
-      console.log('ちょき');
       break;
     case 2:
       if(userHand === 'gu'){
@@ -159,7 +155,6 @@ app.get('/hand/:hand', (req, res) =>{
       }else{
         judgeJanken = 'Draw';
       }
-      console.log('ぱー');
       break;
   }
   if (req.session.userName !== undefined){
@@ -192,7 +187,6 @@ app.get('/ranking', (req, res) =>{
   connection.query(
     'SELECT name, point from users ORDER BY point DESC limit 5',
     (error, results)=>{
-      console.log(results);
       res.render('ranking.ejs', {results: results});
     }
   );

@@ -196,4 +196,17 @@ app.get('/singup', (req, res) =>{
   res.render('singup.ejs');
 });
 
+app.post('/singup', (req, res) =>{
+  const uname = req.body.uname;
+  const email = req.body.email;
+  const password = req.body.password;
+  connection.query(
+    'INSERT INTO users (name, email, password, point) VALUES (?, ?, ?, ?);'
+    ,[uname, email, password, 0],
+    (error, results)=>{
+      res.render('index.ejs');
+    }
+  );
+});
+
 app.listen(3000);

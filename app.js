@@ -192,4 +192,8 @@ app.get('/ranking', (req, res) =>{
   );
 });
 
+app.get('/singup', (req, res) =>{
+  res.render('singup.ejs');
+});
+
 app.listen(3000);

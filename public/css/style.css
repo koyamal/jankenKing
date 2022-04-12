@@ -72,6 +72,16 @@ header{
     margin-top: 20px;
     padding: 10px;
     border: none;
+    width: 150px;
+}
+
+.form-singup-submit{
+    font-size: 20px;
+    text-decoration: underline;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    width: 150px;
 }
 
 .link-select-hand{
@@ -190,4 +200,11 @@ header{
 .header-uname p{
     font-size: 20px;
     display: inline-block;
+}
+
+.link-to-singup{
+    font-size: 20px;
+    display: inline-block;
+    width: 150px;
+    margin-top: 20px;
 }

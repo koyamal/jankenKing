@@ -9,7 +9,11 @@
   <div class="center">
     <form action="/login" method="post">
         <div>
-            <p class="form-title">ログインID</p>
+            <p class="form-title">ユーザ名</p>
+            <input type="text" name="uname" class="form-input">
+        </div>
+        <div>
+            <p class="form-title">ログインID (メールアドレス)</p>
             <input type="text" name="email" class="form-input">
         </div>
         <div>
@@ -17,9 +21,8 @@
             <input type="password" name="password" class="form-input">
         </div>
         <div>
-            <input type="submit" value="ログイン" class="link-bg-color link-text-color form-submit">
+            <input type="submit" value="サインアップ" class="link-bg-color link-text-color form-singup-submit">
         </div>
     </form>
-    <a href="/singup" class="link-bg-color link-text-color link-to-singup">サインアップ</a>
   </div>
 </html>

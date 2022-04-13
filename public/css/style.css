@@ -191,6 +191,7 @@ header{
     margin-left:10px;
     height: 70px;
     line-height: 70px;
+    padding: 0 5px;
 }
 
 .header-uname{

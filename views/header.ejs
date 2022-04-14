@@ -1,25 +1,25 @@
 <header>
-    <div class="header-title">
-        <a href="/play">じゃんけんキング</a>
-    </div>
-    <p>
-        
-    </p>
-    <div class="header-link">
-        <% if(locals.userName === "Guest"){ %>
-            <a href="/login" class="link-bg-color link-text-color">ログイン</a>
-        <% } else { %>
-            <a href="/logout" class="link-bg-color link-text-color">ログアウト</a>         
-        <% } %> 
-        <a href="/ranking" class="link-bg-color link-text-color">ランキング</a>
-    </div>
 
-    <div class="header-uname">
-        <% if(locals.userName === "Guest"){ %>
-            <p><%= locals.userName %></p>
-        <% } else { %>
-            <p><%= locals.userName %></p>  
-            <p><%= locals.point %> pt</p>         
-        <% } %>         
+    <div class="header-contents">
+        <div class="header-title">
+            <a href="/play">じゃんけんキング</a>
+        </div>
+        <div class="header-link">
+            <% if(locals.userName === "Guest"){ %>
+                <a href="/login" class="link-bg-color link-text-color">ログイン</a>
+            <% } else { %>
+                <a href="/logout" class="link-bg-color link-text-color">ログアウト</a>         
+            <% } %> 
+            <a href="/ranking" class="link-bg-color link-text-color">ランキング</a>
+        </div>
+    
+        <div class="header-uname">
+            <% if(locals.userName === "Guest"){ %>
+                <p><%= locals.userName %></p>
+            <% } else { %>
+                <p><%= locals.userName %></p>  
+                <p><%= locals.point %> pt</p>         
+            <% } %>         
+        </div> 
     </div>
 </header>

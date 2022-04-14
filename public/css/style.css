@@ -12,6 +12,10 @@ header{
     height: 70px;
 }
 
+.header-contents{
+    padding: 0 10px;
+}
+
 .center{
     text-align: center;
 }

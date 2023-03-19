@@ -8,10 +8,10 @@ const session = require('express-session');
 
 const app = express();
 
-var userHand = undefined;
-var cpuHand = undefined;
-var judgeJanken = undefined;
-var point = undefined;
+let userHand = undefined;
+let cpuHand = undefined;
+let judgeJanken = undefined;
+let point = undefined;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -127,8 +127,8 @@ app.get('/play', (req, res) =>{
 
 app.get('/hand/:hand', (req, res) =>{
   userHand = req.params.hand;
-  var min = 0 ;
-  var max = 2 ;
+  const min = 0 ;
+  const max = 2 ;
   cpuHand = Math.floor( Math.random() * (max + 1 - min) ) + min ;
   switch(cpuHand){
     case 0:

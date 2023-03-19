@@ -163,10 +163,7 @@ app.get('/hand/:hand', (req, res) =>{
     if (judgeJanken === 'Win'){
       connection.query(
         'UPDATE users SET point = point + 3 WHERE email = ?',
-        [req.session.userInfo.email],
-        (error, results) =>{
-
-        }
+        [req.session.userInfo.email]
       );
     }else if (judgeJanken === 'Draw'){
       connection.query(

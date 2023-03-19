@@ -176,14 +176,14 @@ app.get('/hand/:hand', (req, res) =>{
 });
 
 app.get('/result', (req, res) =>{
-  res.render('result.ejs', {judgeJanken: judgeJanken, userHand: userHand, cpuHand: cpuHand});
+  res.render('result.ejs', {judgeJanken, userHand, cpuHand});
 });
 
 app.get('/ranking', (req, res) =>{
   connection.query(
     'SELECT name, point from users ORDER BY point DESC limit 5',
     (error, results)=>{
-      res.render('ranking.ejs', {results: results});
+      res.render('ranking.ejs', {results});
     }
   );
 });

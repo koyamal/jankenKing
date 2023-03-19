@@ -68,9 +68,11 @@ app.use((req, res, next) =>{
   next();
 });
 
-app.get('/', (req, res) => {
+const a = app.get('/', (req, res) => {
   res.render('index.ejs');
 });
+
+// console.log("a", a);
 
 app.get('/login', (req, res) =>{
   res.render('login.ejs');
